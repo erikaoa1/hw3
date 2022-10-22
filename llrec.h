@@ -78,11 +78,21 @@ Node* llfilter(Node* head, Comp pred);
 template <typename Comp>
 Node* llfilter(Node* head, Comp pred)
 {
-    //*********************************************
-    // Provide your implementation below
-    //*********************************************
+  Node* stillAlive = new Node(0, nullptr);
+  if (head == nullptr){
+    return nullptr;
+  }
 
-
+  stillAlive = llfilter(head->next, pred);
+  if (pred(head->val) == false ){ //keep  (false to remove)
+    head->next = stillAlive;
+    return head;
+  }
+  if( pred(head->val) == true ){ //remove    (true to remove)
+    delete head;
+    return stillAlive;
+  }
+   return stillAlive;
 }
 
 #endif
