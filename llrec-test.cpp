@@ -67,7 +67,50 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+//removes all 2s in the linked list
+struct isTwo{
 
+bool operator()(int num){
+  if (num == 2){
+    return true;
+  }
+  return false;
+}
+};
+
+//removes all odd numbers from the linked list
+struct isOdd{
+
+bool operator()(int num){
+  if (num % 2 ==1){
+    return true;
+  }
+  return false;
+}
+};
+
+//removes all even numbers from the linked list
+struct isEven{
+
+bool operator()(int num){
+  if (num % 2 == 0){
+    return true;
+  }
+  return false;
+}
+};
+
+
+//removes all numbers greater than 3 from the linked list
+struct greaterThree{
+
+bool operator()(int num){
+  if (num > 3){
+    return true;
+  }
+  return false;
+}
+};
 
 
 
@@ -81,11 +124,35 @@ int main(int argc, char* argv[])
     // -----------------------------------------------
     // Feel free to update any code below this point
     // -----------------------------------------------
+   /*
     Node* head = readList(argv[1]);
     cout << "Original list: ";
     print(head);
 
+    cout << endl;
     // Test out your linked list code
+    
+    isOdd test1;
+    isEven test2;
+    
+    greaterThree test3;
+    
+
+    
+    head= llfilter(head, test3);
+    cout << "List without numbers greater than 3: ";
+    print(head);
+    */
+    Node* head2 = readList(argv[1]);
+    cout << "Original list: ";
+    print(head2);    
+
+    isTwo test4;
+    head2= llfilter(head2, test4);
+    cout << "List without 2 : ";
+    print(head2);
+
+
 
 
 
