@@ -16,3 +16,20 @@ Initially, I was going to cout an error message if the input linked list was emp
 however I wasn't sure if printing an error message would disturb the automatic tests that the graders use,
 so i removed iostream and commented out the error message. It now simply returns nothing if the input linked list is empty. 
 
+
+
+How to compile and run logicsim:
+
+Make sure you are in the logicsim directory (cd logicsim)
+
+Compile: make
+Run: ./logicsim (input text file)
+- for example: ./logicsim single_and.text
+
+How to turn it into a timing diagram:
+./logicsim > (name of uml).uml
+java -jar plantuml.jar (name of uml).uml
+
+For example: 
+./logicsim > my_and.uml
+java -jar plantuml.jar my_and.uml
